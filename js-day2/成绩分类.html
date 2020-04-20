@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var scrace = prompt('请输入你的成绩');
+        while(scrace>100 || scrace<0){
+            scrace = prompt('宁输入你的成绩无效，请从新输入你的成绩');
+        }
+        if(scrace >= 90){
+            alert('A');
+        }else if(scrace >= 80){
+            alert('B');
+        }else if(scrace >= 70){
+            alert('C');
+        }else if(scrace >= 60){
+            alert('D');
+        }else {
+            alert('F');
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

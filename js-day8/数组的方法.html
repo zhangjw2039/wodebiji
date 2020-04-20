@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var arr = [1,2,3,4];
+    // console.log(arr.push(5));
+    // console.log(arr);
+    // arr.unshift(0);
+    // console.log(arr);
+    // console.log(arr.pop());
+    // console.log(arr);
+    // console.log(arr.shift());
+    // console.log(arr);
+    var arr = [1,2,3,4,17];
+    // arr.reverse();
+    // console.log(arr);
+    console.log(arr.sort());
+    arr.sort(function(a,b){
+        return b-a;
+    });
+    console.log(arr);
+    console.log(arr.indexOf(11));
+    console.log(arr.lastIndexOf(17));
+    console.log(arr.toString());
+    console.log(arr.join('---'));
+    var arr1 = ['1', 'b', 'c','d'];
+    console.log(arr.concat(arr1));
+    console.log(arr1.slice(0,3));
+    console.log(arr.splice(0,2));
+    
+</script>
+
+
+</html>

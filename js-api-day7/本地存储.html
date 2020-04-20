@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>添加</button>
+    <button>获取</button>
+    <button>删除</button>
+    <button>删除所有</button>
+</body>
+
+<script>
+    var input = document.querySelector('input');
+    var btns = document.querySelectorAll('button');
+    var o = {
+        uname:'andy',
+        age:18
+    }
+    btns[0].onclick = function() {
+        window.sessionStorage.setItem('key',o);
+        window.localStorage.setItem('key',o);
+    }
+    btns[1].onclick = function() {
+        console.log(typeof window.sessionStorage.getItem('key'));
+        console.log(typeof window.localStorage.getItem('key'));
+    }
+    btns[2].onclick = function() {
+        window.sessionStorage.removeItem('key')
+    }
+
+
+</script>
+</html>

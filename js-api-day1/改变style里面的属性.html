@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var flag = true;
+    div.onclick = function() {
+        if(flag) {
+            this.style.background = 'pink';
+            this.style.width = '500px'
+            flag = false;
+        }else {
+            this.style.background = 'red';
+            this.style.width = '200px';
+            flag = true;
+        }
+    }
+</script>
+</html>

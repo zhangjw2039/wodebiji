@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="login.html">login.html</a>
+    <button>前进</button>
+    <button>后退</button>
+</body>
+<script>
+    var btns = document.querySelectorAll('button');
+    btns[0].onclick = function() {
+        window.history.forward();
+    }
+    btns[1].onclick = function() {
+        window.history.back();
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    手机号码:
+    <input type="number" name="" id="">
+    <button>按钮</button>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    //当点击一次时 禁止鼠标点击
+    btn.onclick = function() {
+        var i = 3;
+        btn.disabled = true;
+        
+        //给window添加事件，来改变button的内容
+        var p = window.setInterval(fn1,1000);
+        function fn1() {
+            if(i==0) {
+                window.clearInterval(p);
+                btn.disabled = false;
+                btn.innerHTML = '重新发送';
+                return false;
+            }
+            btn.innerHTML = '请'+i+'秒之后再发送';
+            i--;
+        }
+    }
+</script>
+</html>

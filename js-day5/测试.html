@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //递归算法
+    function show(i) {
+        var sum=0;
+        if(i == 0) {
+            return 1;
+        }else {
+            sum = i * show(i-1);
+        }
+        return sum;
+    }
+    console.log(show(8));
+    
+    //用递归计算0-100的和
+    function show2(i) {
+        var sum;
+        if(i==0){
+            return 0;
+        }else {
+            sum = i + show2(i-1);
+        }
+        return sum;
+    }
+    console.log(show2(100));
+    
+    function a(m,n,p){
+        console.log("111");
+        console.log(m);
+        
+    }
+
+    function a(m,n){
+        console.log('222')
+        console.log(m);
+        
+
+    }
+    a(1,2,3);
+    
+
+</script>
+</html>

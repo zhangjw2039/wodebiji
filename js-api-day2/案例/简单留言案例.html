@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        textarea {
+            resize: none;
+            vertical-align: bottom;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            width: 300px;
+            height: 40px;
+            background: pink;
+            margin-top: 10px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+        a {
+            text-decoration: none;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>添加</button>
+    <ul>
+        
+    </ul>
+</body>
+<script>
+    var text = document.querySelector('textarea');
+    var btn = document.querySelector('button');
+    var ul = document.querySelector('ul');
+
+    btn.addEventListener('click', fn);
+    function fn() {
+        if(text.value == ''){
+            alert('输入的内容为空');
+            return false;
+        }
+        var li = document.createElement('li');
+        li.innerHTML = text.value + '<a href="javascript:;">删除</a>'
+        ul.appendChild(li);
+        text.value = '';
+        var as = document.querySelectorAll('a');
+        for(var i=0; i<as.length; i++) {
+            as[i].onclick = function() {
+                ul.removeChild(this.parentNode);
+            }
+        }
+        
+    }
+</script>
+</html>

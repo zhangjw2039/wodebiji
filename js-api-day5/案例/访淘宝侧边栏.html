@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .one {
+            height: 300px;
+            background: skyblue;
+        }
+        .two {
+            margin-top: 100px;
+            height: 400px;
+            background: pink;
+        }
+        .three {
+            margin-top: 200px;
+            height: 200px;
+            background: red;
+        }
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .nav {
+            position: absolute;
+            top: 530px;
+            right: 190px;
+            height: 150px;
+            width: 50px;
+            background: blue;
+        }
+        .nav a {
+            display: none;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+    <script>
+        onload=function() {
+            var nav = document.querySelector('.nav');
+            var two = document.querySelector('.two');
+            var a = document.querySelector('.nav a');
+            var navTop = nav.offsetTop;
+            document.addEventListener('scroll', function() {
+                if(window.pageYOffset>=two.offsetTop) {
+                    nav.style.position = 'fixed';
+                    nav.style.top = navTop-two.offsetTop+'px';
+                    a.style.display = 'block';
+                }else {
+                    nav.style.position = 'absolute';
+                    nav.style.top = navTop+'px';
+                    a.style.display = 'none';
+                }
+            })
+            var f = null;
+            a.addEventListener('click', function() {
+                window.scroll
+                // 给返回顶部调价动画效果
+                f = window.setInterval(function(){
+                    if(window.pageYOffset == 0) {
+                        window.clearInterval(f);
+                        return false;
+                    }
+                    var step = (0 - window.pageYOffset)/10;
+                    step = step>0?Math.ceil(step):Math.floor(step);
+                    window.scroll(0,window.pageYOffset+step);
+                    console.log(step)
+                },15)
+                
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <a href="javascript:;">返回顶部</a>
+    </div>
+    <div class="w">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+</body>
+</html>

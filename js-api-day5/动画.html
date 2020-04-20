@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+        
+    </style>
+</head>
+<body>
+    <button>按钮</button>
+    <div></div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    function show(obj, target, callback) {
+        window.clearInterval(obj.a);
+        obj.a = window.setInterval(function() {
+
+            var step = (target-obj.offsetLeft)/10;
+            step = step>0?Math.ceil(step):Math.floor(step);
+            if(obj.offsetLeft == target) {
+                window.clearInterval(obj.a);
+                callback();
+                return false;
+            }
+            obj.style.left = obj.offsetLeft+step+'px';
+        }, 15)
+    }
+
+    var btn = document.querySelector('button');
+    btn.onclick = function() {
+        show(div,500,function() {
+            div.style.backgroundColor = 'red';
+        });
+    }
+    
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #999;
+        }
+        .box {
+            padding: 100px;
+        }
+        .con {
+            visibility: hidden;
+            position: relative;
+            box-sizing: border-box;
+            width: 250px;
+            height: 30px;
+            margin-bottom: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 3px 2px rgba(0, 0, 0, .2);
+            background: #fff;
+        }
+        .con::after {
+            content: "";
+            position: absolute;
+            top: 28px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border: 10px solid #000;
+            border-color: #fff transparent transparent;
+        }
+    </style>
+    <script>
+        onload = function() {
+            //给input添加键盘事件
+            var inp = document.querySelector('input');
+            var con = document.querySelector('.con');
+            inp.addEventListener('keyup',fn1);
+            function fn1() {
+                if(this.value == ''){
+                    con.style.visibility = 'hidden';
+                    return false;
+                }
+                con.style.visibility = 'visible';
+                con.innerHTML = this.value;
+            }
+            //给事件元添加焦点和失去焦点事件
+            inp.addEventListener('blur', function() {
+                con.style.visibility = 'hidden';
+            })
+            inp.addEventListener('focus', function() {
+                if(this.value == '') {
+                    return false;
+                }
+                con.style.visibility = 'visible';
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="con">123</div>
+        <input type="text">
+    </div>
+</body>
+</html>

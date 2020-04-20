@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//     从以下学员名单中随机选出4个学员：
+
+// ​	var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"]；
+
+// ​	注意：不要有重复的学员
+    function getRandom(min,max) {
+        return Math.floor(Math.random()*(max-min+1)) + min;
+    }
+    function chose(arr) {
+        var newArr = []
+        var num1 = getRandom(0, arr.length-1);
+        var num2 = getRandom(0, arr.length-1);
+        var num3 = getRandom(0, arr.length-1);
+        var num4 = getRandom(0, arr.length-1);
+        newArr[newArr.length] = arr[num1];
+        while(num1 == num2) {
+            num2 = getRandom(0, arr.length-1);
+        }
+        newArr[newArr.length] = arr[num2];
+        while( num2 == num3) {
+            num3 = getRandom(0, arr.length-1);
+        }
+        newArr[newArr.length] = arr[num3];
+        while( num3 == num4) {
+            num4 = getRandom(0, arr.length-1);
+        }
+        newArr[newArr.length] = arr[num4];
+        return newArr;
+    }
+    var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+    console.log(chose(arr));
+    
+</script>
+</html>

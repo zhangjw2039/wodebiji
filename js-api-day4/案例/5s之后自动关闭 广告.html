@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background: pink;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var div = document.querySelector('div');
+            var fn1 = function () {
+                div.style.display='none';
+            }
+            window.setTimeout(fn1,1000);
+            
+            console.log(typeof fn1);
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

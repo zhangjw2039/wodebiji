@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // var mesg = prompt('1.存钱\n2.取钱\n3.显示余额\n4.退出');
+        // var momey = 100;
+        // if(mesg == 1){
+        //     var num = prompt('存钱数目');
+        //     momey = momey + parseFloat(num);
+        //     alert(momey);
+        // }else if(mesg == 2) {
+        //     var num2 = prompt('取钱数目');
+        //     momey = momey - num2;
+        //     alert(momey);
+        // }else if(mesg == 3) {
+        //     alert(momey);
+        // }else {
+        //     // break;
+        // }
+        
+        var flag = true;
+        var momey = 100;
+        while (flag) {
+            var mesg = prompt('1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            if(mesg == 1){
+                var num = prompt('存钱数目');
+                momey = momey + parseFloat(num);
+                alert(momey);
+            }else if(mesg == 2) {
+                var num2 = prompt('取钱数目');
+                momey = momey - num2;
+                alert(momey);
+            }else if(mesg == 3) {
+                alert(momey);
+            }else {
+                flag = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

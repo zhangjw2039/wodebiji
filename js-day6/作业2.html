@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 要求：
+	// 函数名称：exist
+	// 函数调用方式：exist(数据data，数组arr)
+	// 函数功能：判断“数据data”是否存在于“数组arr”中，如果是函数返回值为true，如果不是函数返回值为false
+    function exist(data, arr) {
+        for(var i=0; i<arr.length; i++){
+            if(data === arr[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    var arr = [1,3,4,5,'string','a','1'];
+    var data = 1;
+    console.log(exist(data, arr));
+    
+</script>
+</html>

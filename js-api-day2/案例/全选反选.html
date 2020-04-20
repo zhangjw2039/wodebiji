@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        thead tr {
+            height: 45px;
+            font-size: 18px;
+            background: skyblue;
+        }
+        th,
+        td{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id=""></th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>Iphone8</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>Ipad Pro</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>Ipad Air</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>Apple Watch</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    var ck = document.querySelector('th input');
+    var cks = document.querySelectorAll('td input');
+    // console.log(ck)
+    // console.log(cks)
+    ck.onclick = function() {
+        for(var i=0; i<cks.length; i++) {
+            cks[i].checked = this.checked;
+        }
+    }
+
+    for(var i=0; i<cks.length; i++) {
+        cks[i].onclick = function() {
+            var flag = true;
+            for(var i=0; i<cks.length; i++) {
+                if(!cks[i].checked) {
+                    flag = false;
+                    break;
+                }
+            }
+            ck.checked = flag;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function add(num1, num2) {
+        return num1 + num2;
+    }
+    function sub(num1, num2) {
+        return num1 - num2;
+    }
+    function mul(num1, num2) {
+        return num1 * num2;
+    }
+    function ope(num1, num2) {
+        return num1 / num2;
+    }
+    var flag = true;
+    while (flag) {
+        var mesg = prompt('欢迎使用云计算器\n1.加法运算\n2.减法运算\n3.乘法运算\n4.除法运算\n5.退出\n请输入你的选项');
+        if(mesg == 1) {
+            var num1 = parseFloat(prompt());
+            var num2 = parseFloat(prompt());
+            alert(add(num1, num2));
+        }else if (mesg == 2) {
+            var num1 = prompt();
+            var num2 = prompt();
+            alert(sub(num1 , num2));
+        }else if (mesg == 3) {
+            var num1 = prompt();
+            var num2 = prompt();
+            alert(mul(num1 , num2));
+        }else if(mesg == 4) {
+            var num1 = prompt();
+            var num2 = prompt();
+            alert(ope(num1 , num2));
+        }else {
+            flag = false;
+        }
+    }
+    
+</script>
+</html>

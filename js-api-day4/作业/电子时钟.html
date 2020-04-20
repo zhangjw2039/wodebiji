@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>1</span>
+    </div>
+</body>
+<script>
+    //思路 
+    //1.给window设置定时器，让其1s执行一次
+    //2.获取当时的时间，并且赋值给span
+    var span = document.querySelector('span');
+    var weeks = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    fn1();
+    window.setInterval(fn1,1000);
+    function fn1() {
+        var time = new Date();
+        var year = time.getFullYear();
+        var month =(time.getMonth()+1).toString().padStart(2,'0');
+        var day = time.getDate().toString().padStart(2,'0');
+        var week = time.getDay();
+        var hour = time.getHours().toString().padStart(2,'0');
+        var minutes = time.getMinutes().toString().padStart(2,'0');
+        var seconds = time.getSeconds().toString().padStart(2,'0');
+
+        span.innerHTML = year+'年'+month+'月'+day+'日'+weeks[week]+hour+':'+minutes+':'+seconds;
+    }
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .box {
+            text-align: center;
+            height: 400px;
+            width: 600px;
+            margin: 100px auto;
+            padding-top: 100px;
+            
+        }
+        .box p {
+            font-size: 30px;
+            font-weight: 700;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        li {
+            width: 100px;
+            height: 50px;
+            background: orange;
+            margin-left: 10px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>距离光棍节，还有</p>
+        <ul>
+            <li>11</li>
+            <li>22</li>
+            <li>32</li>
+            <li>42</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var lis = document.querySelectorAll('li');
+    var nowTime = new Date();
+    var year = nowTime.getFullYear();
+    
+    var setTime = new Date(year+'-11-11 00:00:00');
+    fn1();
+    window.setInterval(fn1, 1000);
+    function fn1() {
+        var nowTime = new Date();
+        var time = parseInt((setTime - nowTime)/1000);
+        var d = parseInt(time/60/60/24).toString().padStart(2,'0');
+        var h = parseInt(time/60/60%24).toString().padStart(2,'0');
+        var m = parseInt(time/60%60).toString().padStart(2,'0');
+        var s = parseInt(time%60).toString().padStart(2,'0');
+        lis[0].innerHTML = d+'天';
+        lis[1].innerHTML = h+'时';
+        lis[2].innerHTML = m+'分';
+        lis[3].innerHTML = s+'秒';
+    }
+</script>
+</html>

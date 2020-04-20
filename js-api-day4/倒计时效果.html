@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+        
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var spans = document.querySelectorAll('span');
+
+        setInterval(getTime, 1000);
+        var setTime = +new Date('2019-10-25 19:00:00');
+        getTime();
+        function getTime() {
+            var nowTime = +new Date();
+            var time = parseInt((setTime - nowTime)/1000);
+            var h = parseInt(time/3600%24);
+            var m = parseInt(time/60%60);
+            var s = parseInt(time%60);
+            spans[0].innerHTML = h.toString().padStart(2,'0');
+            spans[1].innerHTML = m.toString().padStart(2,'0');
+            spans[2].innerHTML = s.toString().padStart(2,'0');
+        }
+    </script>
+</body>
+
+</html

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            margin: 100px;
+        }
+        input {
+            outline: none;
+        }
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+        thead tr {
+            background: skyblue;
+            
+        }
+        th,
+        td{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        请输入姓名:<input type="text"><br>
+        请输入邮箱:<input type="text"><br>
+        <button>添加</button>
+        <table>
+            <thead>
+                <tr>
+                    <th width="100px">姓名</th>
+                    <th width="200px">邮箱</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var inp1 = div.children[0];
+    var inp2 = div.children[2];
+    var btn = div.children[4];
+    var tbody = div.children[5].children[1];
+    
+    btn.onclick = function() {
+        if(inp1.value == '' || inp2.value == '') {
+            alert('输入的内容为空');
+            return false;
+        }
+        var tr = document.createElement('tr');
+        tbody.appendChild(tr);
+        var td = document.createElement('td');
+        td.innerHTML = inp1.value;
+        tr.appendChild(td);
+        var td = document.createElement('td');
+        td.innerHTML = inp2.value;
+        tr.appendChild(td);
+    }
+</script>
+</html>

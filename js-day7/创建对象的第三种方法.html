@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function People(name, sex,) {
+        this.name = name;
+        this.sex = sex;
+        this.eat = function(str) {
+            console.log(str)
+        }
+    }
+    var people = new People('张三', '男');
+    console.log(people.name);
+    console.log(people.sex);
+    people.eat('饭');
+    
+    
+</script>
+</html>

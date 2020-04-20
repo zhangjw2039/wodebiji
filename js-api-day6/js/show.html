@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            height: 200px;
+            width: 200px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <button>anniu</button>
+    <div>
+
+    </div>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+
+    // window.setInterval(function() {
+    //     div.style.left = div.offsetLeft + 1 +'px';
+    // },15)
+    function show(obj, target, callback) {
+        window.clearInterval(obj.move);
+        obj.move = window.setInterval(function() {
+            if(obj.offsetLeft == target){
+                window.clearInterval(obj.move);
+                callback && callback();
+                return false;
+            }
+            var step = (target-obj.offsetLeft)/10;
+            step = step>0?Math.ceil(step):Math.floor(step);
+            obj.style.left = obj.offsetLeft + step +'px';
+        },15)
+    }
+    btn.onclick = function() {
+        show(div, 100, function() {
+            console.log('xixi');
+        })
+    }
+    
+</script>
+</html>

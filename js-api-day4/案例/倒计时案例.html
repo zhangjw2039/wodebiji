@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        li {
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            background: #000;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+    <script>
+        onload = function() {
+            var lis = document.querySelectorAll('li');
+            //定义需要的到时的时间
+            var setTime = +new Date('2019-10-25 22:00:00');
+            //在每次刷新一次的时候都需要调用函数一次
+            fn1();
+            //给window添加一个定时器
+            window.setInterval(fn1,1000);
+            function fn1() {
+                //定义一个变量记录当时的时间
+                var nowTime = +new Date();
+                //记录时间差
+                var time = parseInt((setTime - nowTime)/1000);
+                var h = parseInt(time/60/60%24);
+                var m = parseInt(time/60%60);
+                var s = parseInt(time%60);
+                lis[0].innerHTML = h.toString().padStart(2,'0');
+                lis[1].innerHTML = m.toString().padStart(2,'0');
+                lis[2].innerHTML = s.toString().padStart(2,'0');
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

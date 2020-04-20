@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .ipt {
+            outline: none;
+            border: 1px solid #ccc;
+            height: 20px;
+            vertical-align: top;
+        }
+        .message {
+            display: inline-block;
+            width: 200px;
+            height: 20px;
+            text-align: left;
+            padding-left: 16px;
+            line-height: 20px;
+            background: url(images/mess.png) no-repeat left center;
+        }
+        .wrong {
+            background-image: url(images/wrong.png);
+            color: red;
+        }
+        .right {
+            background-image: url(images/right.png);
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" class="ipt">
+        <p class="message">请输入6-16位密码</p>
+    </div>
+</body>
+<script>
+    var ipt = document.querySelector('.ipt');
+    var message = document.querySelector('.message');
+    var name = message.className;
+    ipt.onblur = function() {
+        
+        if(ipt.value.length<6 || ipt.value.length>16) {
+            message.className = name + ' wrong';
+            message.innerHTML = '你输入密码位数有误，'
+        }else {
+            message.className = name + ' right';
+            message.innerHTML = '密码正确';
+        }
+        console.log(name);
+        
+    }
+    
+    
+</script>
+</html>

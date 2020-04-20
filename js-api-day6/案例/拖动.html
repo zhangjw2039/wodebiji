@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var startX = 0;
+    var startY = 0;
+    var divY = div.offsetTop;
+    var divX = div.offsetLeft;
+    div.addEventListener('touchstart', function(e) {
+        startX = e.targetTouches[0].pageX
+        startY = e.targetTouches[0].pageY
+        console.log(startX,startY);
+    })
+    div.addEventListener('touchmove', function(e) {
+        var moveX = e.targetTouches[0].pageX - startX;
+        var moveY = e.targetTouches[0].pageY - startY;
+        div.style.left = divX+moveX+'px';
+        div.style.top = divY+moveY+'px';
+    })
+    div.addEventListener('touchend', function(e) {
+        divX = div.offsetLeft;
+        divY = div.offsetTop;
+    })
+</script>
+</html>

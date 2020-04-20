@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        .top {
+            text-align: center;
+        }
+        .top a {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+        }
+        .login {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 600px;
+            height: 300px;
+            background: #fff;
+            z-index: 99;
+            box-shadow: 0 0 20px #ddd;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            background: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+        .login p {
+            font-size: 25px;
+            text-align: center;
+            padding: 20px 0;
+            cursor: move;
+        }
+        .login input {
+            width: 70%;
+            height: 40px;
+            outline: none;
+            border: 1px solid #ccc;
+            margin-bottom: 25px;
+        }
+        .login span {
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            padding: 10px 40px;
+        }
+        .bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3);
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="top">
+        <a href="javascript:;" class="link">点击,弹出登录框</a>
+    </div>
+    <div class="login">
+        <a href="" class="close">😄</a>
+        <p>登录会员</p>
+        用户名:<input type="text" class="user"><br>
+        密&nbsp;&nbsp;&nbsp;码:<input type="text" class="psw"><br>
+        <span>登录会员</span>
+    </div>
+    <div class="bg"></div>
+</body>
+<script>
+    var link = document.querySelector('.link');
+    var login = document.querySelector('.login');
+    var close = document.querySelector('.close')
+    var bg = document.querySelector('.bg');
+    var f = null;
+    link.onclick = function() {
+        login.style.display = 'block';
+        bg.style.display = 'block';
+    }
+    close.onclick = function() {
+        login.style.display = 'none';
+        bg.style.display = 'none';
+    }
+    var p = document.querySelector('.login p');
+    p.addEventListener('mousedown',function(e) {
+        var x = e.pageX - login.offsetLeft;
+        var y = e.pageY - login.offsetTop;
+        f = function(e) {
+            login.style.left = e.pageX-x+'px';
+            login.style.top = e.pageY-y+'px';
+            console.log(111);
+        }
+        p.addEventListener('mousemove',f)
+    })
+    // console.log(f);
+    p.addEventListener('mouseup', function() {
+        console.log(f)
+        p.removeEventListener('mousemove', f);
+    })
+</script>
+</html>

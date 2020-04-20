@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num = prompt();
+        while(num<0 || num>100){
+            num = prompt();
+        }
+        switch (parseInt(num/10)) {
+            case 9:
+                console.log('A');
+                break;
+            case 8:
+                console.log('B');
+                break;
+            case 7:
+                console.log('C');
+                break;
+            case 6:
+                console.log('D');
+                break;
+            default:
+                console.log('E');
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

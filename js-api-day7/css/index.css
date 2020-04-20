@@ -1,0 +1,64 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.focus {
+    position: relative;
+    /* height: 400px; */
+    background: pink;
+}
+.focus ul {
+    /* width: 500%; */
+    margin-left: -100%;
+}
+.focus ul li {
+    float: left;
+    /* width: 20%; */
+}
+.focus img {
+    width: 100%;
+    vertical-align: top;
+}
+.focus ol {
+    position: absolute;
+    right: 50%;
+    bottom: 10%;
+    transform: translateX(50%);
+    z-index: 999;
+}
+.focus ol li {
+    margin-left: 10px;
+    float: left;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 2px;
+    transition: all .3s;
+}
+.focus ol .current {
+    width: 20px;
+}

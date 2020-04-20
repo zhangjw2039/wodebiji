@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    document.addEventListener('mousemove', fn1);
+    
+    function fn1(e) {
+        div.style.left = e.pageX + 'px';
+        div.style.top = e.pageY + 'px';
+    }
+</script>
+</html>

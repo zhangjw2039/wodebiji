@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//     题目描述：制作一个函数，getDayNum( 年月日日期 )，可以返回指定日期是当前年的第几天
+// ​   例：  getDayNum( “2019-1-2”)    返回值为：2
+    function getDayNum(str) {
+        var date = new Date(str);
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        if(year %4 == 0 && year%100 != 0 || year %400 ==0){
+            if(month == 1) {
+                return date.getDate();
+            }else if(month == 2) {
+                return date.getDate() + 31;
+            }else if(month == 3) {
+                return date.getDate() + 31 +29;
+            }else if(month == 4) {
+                return date.getDate() + 31 +29+30;
+            }else if(month == 5) {
+                return date.getDate() + 31 +29+30+31;
+            }else if(month == 6) {
+                return date.getDate() + 31 +29+30+31+30;
+            }else if(month == 7) {
+                return date.getDate() + 31 +29+30+31+30+31;
+            }else if(month == 8) {
+                return date.getDate() + 31 +29+30+31+30+31+31;
+            }else if(month == 9) {
+                return date.getDate() + 31 +29+30+31+30+31+31+30;
+            }else if(month == 10) {
+                return date.getDate() + 31 +29+30+31+30+31+31+30+31;
+            }else if(month == 11) {
+                return date.getDate() + 31 +29+30+31+30+31+31+30+31+30;
+            }else {
+                return date.getDate() + 31 +29+30+31+30+31+31+30+31+30+31;
+            }
+        }else {
+            if(month == 1) {
+                return date.getDate();
+            }else if(month == 2) {
+                return date.getDate() + 31;
+            }else if(month == 3) {
+                return date.getDate() + 31 +28;
+            }else if(month == 4) {
+                return date.getDate() + 31 +28+30;
+            }else if(month == 5) {
+                return date.getDate() + 31 +28+30+31;
+            }else if(month == 6) {
+                return date.getDate() + 31 +28+30+31+30;
+            }else if(month == 7) {
+                return date.getDate() + 31 +28+30+31+30+31;
+            }else if(month == 8) {
+                return date.getDate() + 31 +28+30+31+30+31+31;
+            }else if(month == 9) {
+                return date.getDate() + 31 +28+30+31+30+31+31+30;
+            }else if(month == 10) {
+                return date.getDate() + 31 +28+30+31+30+31+31+30+31;
+            }else if(month == 11) {
+                return date.getDate() + 31 +28+30+31+30+31+31+30+31+30;
+            }else {
+                return date.getDate() + 31 +28+30+31+30+31+31+30+31+30+31;
+            }
+        }
+    }
+    console.log(getDayNum('2000-3-2'));
+    
+</script>
+</html>

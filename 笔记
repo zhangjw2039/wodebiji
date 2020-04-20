@@ -1,0 +1,477 @@
+
+js里面的方法{
+    focus()  获得焦点
+    blur()  失去焦点
+}
+
+
+进制的转换 parseInt(需要转换的进制数字).toString(转成后的进制));
+
+前端javascript组成部分
+1.DOM 2.BOM 3.ECMAscript
+
+js的输入输出
+prompt('输入你的年龄');
+alert('我是一个弹出框');
+console.log('我是程序员能看到的');
+doucment.write('');
+
+数据类型
+1.基本数据类型 
+    数值 String Boolean undefined NaN
+2.引用数据类型
+    Object null Function
+
+js的数据类型只有在赋值的时候才确定数据的类型，并且数据的类型可以变换的。
+
+isNaN(参数) 返回传入的参数是否为非数值  返回值为 false true；
+
+转义符  需要写入引号里面
+\n  换行
+\\  \
+\' 单引号
+\" 双引号
+\t 缩进
+\b 空格
+
+检测字符串的长度 length
+
+字符串链接的拓展
+age = 18
+'张建文'+age  等价于 `张建文${age}`
+
+数据类型检测
+
+typeof 变量
+
+数据类型的转换
+
+转换为字符串
+    1.toString() 2.String(需要转换的数据) 3.数据+''
+
+转换为数值型
+    1.parseInt() 2.parseFloat() 3.Number(需要转换的数据) 4.js隐形转换 利用算术 - / * 'number' - Number;
+
+boolean 类型的转换
+
+    Boolean('') Boolean(null) Boolean(NaN) Boolean(0) Boolean(undefined) 只有这几种会转换为flase
+    其余的都转换为true;
+
+运算符 
+    算术 + - * / % 
+    自增运算符
+        前置自增: 先自增 再参与运算     后置自增: 先参与运算 后自增
+
+
+短路运算符
+    逻辑与
+    如果表达式1为真 则返回表达式2
+    如果表达式1为假 则返回表达式1
+
+    逻辑或
+
+
+三元运算符
+    表达式1？表达式2:表达式3;
+    当表达式1为真时 返回表达式2
+    当表达式1为假时 返回表达式3
+
+流程控制
+
+拓展
+字符串.padStart("补充之后的字符串的长度" , "要补充的字符串") 在字符串的前面补充
+字符串.padEnd("补充之后的字符串的长度" , "要补充的字符串") 在字符串的后面补充
+
+创建数组的方法:
+    var arr = new Array();
+    var arr = [];
+
+遍历的扩展es5语法:
+    arr.forEach(function(value , index){
+        console.log(value, index);
+    })
+
+
+
+    函数没有返回值，默认值是undefined;
+    return 只能返回一个值,如果写了多个以最后一个为准;
+
+    每个函数里面都有个arguments伪数组来接收实参.(这样就可以不用定义形参)
+
+
+    函数的两种生命方式
+    1.  function fn() {
+
+    }
+    2.  var fn= function() {
+
+    }
+    此fn为变量名 不是函数名 (匿名函数)
+    可以进行参数的传递
+
+
+    全局变量和局部变量。
+        全局变量:全局作用域(作用在整个script标签内，或者整个js文件) 特殊情况在函数内部没有声明，直接赋值的变量也是全局变量.
+        局部变量:局部作用域(函数内部) js中只有函数能限定作用域
+        全局变量只有浏览器关闭时，才会释放资源，局部变量 当函数调用完毕之后就会释放资源
+
+    预解析:
+        js引擎运行js文件分为两步:预解析  运行代码
+            预解析会将 var 的声明提升到当前作用域的最前面,会在内存中开辟空间给变量名，若已经存在相同的命名则不会开辟另外一个空间。
+            function 的解析一共有两步，第一步在内存中开辟一个空间，第二步并且指向函数体.
+
+
+    创建对象的三种方式
+        1.对象字面量
+            var obj = {
+                name: 'zhangsan',
+                sex: 'nan',
+                sayHi: function() {
+                    console.log('hi');
+                }
+            }
+        调用对象属性的两种方式:对象名.属性   对象名['属性']
+        调用对象的方法:对象名.方法名()
+
+        2.new Object
+            var obj = new Object();
+            追加属性和方法
+            obj.uname = 'zhangsan';
+            obj.sayHi = function() {
+                console.log('hi')
+            }
+        3.构造函数 构造函数不需要返回值，也能返回对象
+
+
+        构造函数有个默认的return this 
+        如果重写return 基本数据类型 那么构造函数会忽略基本数据类型 依然返回的是this
+        如果重写return 引用数据类型 那么构造函数则返回的是该引用数据类型
+
+    for  in  遍历对象
+    for(var k in 对象) {
+        console.log(对象[k])
+    }
+
+
+    instanceof  运算符  判断变量属于哪个类型 返回值为真假
+
+
+基本包装类型  String  Number  Boolean
+
+    字符串是不可变的
+
+
+
+
+js  API
+
+
+    API（Application Programming Interface，应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，
+    而又无需访问源码，无需理解其内部工作机制细节，只需直接调用使用即可。
+
+    根据ID找对象 
+        document.getElementById() 
+
+    根据标签名找对象
+        document.getElementsByTagName() 返回的是一个集合
+
+    根据name属性 找对象 
+        document.getElementsByName();  返回的是一个集合
+    
+    根据class属性找对象
+        document.getElementByClassName();  返回的是一个集合 html5  新增
+
+    根据指定选择器返回第一个元素对象
+        document.querySelector('选择器')
+
+    根据指定选择器返回
+        document.querySelectorAll('选择器')
+
+
+
+    Body  HTML 标签的获取方式
+    doucment.body   document.doucmentElement    
+
+
+    事件的三要素  事件源 事件类型  事件处理程序
+                (1) 事件源  事件被触发的对象
+                (2) 事件类型  如何触发 
+                (2) 事件处理程序   通一个函数的赋值
+
+
+    元素内容的两个方法
+        element.innerHTML;
+        element.innerText;
+        两者的区别 
+            innerText 不识别html标签
+            innerHTML 识别html标签
+        这个两个属性 是可以读写的
+
+    事件类型 onclick  onmouseover  onmouseout  onfocus  onblur
+
+
+
+    获取元素的属性值  element.属性  这个只能获取元素自带的属性
+                    element.getAttribute('属性名');  这个能获取自定义的属性
+                    element.dataset.index   只能获取自定义设置的属性   dataset是一个集合
+
+    设置元素的属性值  element.属性 = '';
+                    element.setAttribute('属性', '值');
+
+    移除元素属性
+                    element.removeAttribute('属性值');
+
+
+    h5中自定义属性一般定义为  data-属性名
+
+    自定义的属性就是为了保存数据，和使用数据
+
+
+    节点操作
+            节点的三个基本属性 nodeType(节点类型))   nodeName(节点名)   nodeValue(节点内容)
+                节点类型分为 三种  元素节点(1)  属性节点(2)  文本节点(3);
+
+    节点获取
+            parentNode  获取父节点
+            childNodes  获取所有子节点，包括文本节点
+            children    获取所有元素子节点
+            fristChild  获取第一子节点
+            fristElementChild  获取第一个元素子节点
+            lastChild   获取最后一个子节点
+            lastElementChild  获取最后一个元素子节点
+
+            nextSibling  下一个兄弟节点
+            previousSiling  上一个兄弟节点
+            nextElementSibling  下一个元素兄弟节点
+            previousElementSiling  上一个元素兄弟节点
+
+    创建节点
+            document.createElement();
+
+    添加节点
+            node.appendChild();插入末尾
+            node.insertBefore(需要插入的元素，指定的元素);
+    
+    删除节点
+            node.removeChild()
+
+    克隆节点
+            cloneNode()  如果里面没有参数 或者为false 则是浅拷贝 
+                            如果为true 则为深拷贝
+
+
+
+    三种动态创建元素的方式
+
+        1.document.write('<div>123</div>');  会页面重绘
+
+        2.innerHTML
+
+        3.document.createElement();
+
+
+    事件高级
+
+        方法监听组册方式
+            addEvenListener(type, listener, [ userCapture])
+
+        删除事件
+            element.onclick = null;
+            element.removeEventListener('事件类型', 函数名)
+
+
+    DOM事件流分为三个阶段
+        1.捕获阶段  如果addEventListener的第三个参数为true 则执行捕获阶段
+        2.目标阶段
+        3.冒泡阶段  如果addEventListener的第三个参数为false或者省略 则执行冒泡阶段
+
+        js只会执行捕获阶段和冒泡阶段的一个
+
+    事件对象
+        event.target  返回的是触发事件的对象  this是指向绑定事件的对象
+
+    阻止冒泡的两种方式；
+        e.stopPropagation()
+        e.cancelBubble = true
+
+    阻止事件的默认行为
+        e.preventDefault()   return false;   event.returnValue = false;
+
+    事件委托
+
+
+
+    鼠标事件
+        contextmenu  鼠标右键
+        selectstart  禁止选中文字
+        mousemove  鼠标移动
+
+        clientX:
+        clientY: 可视窗口的 x y 的坐标
+        pageX:
+        pageY::在文档的 x y的坐标
+        screenx:
+        screenY:在电脑屏幕的 x y 的坐标
+
+    键盘事件
+        onkeyup  当某个键被松开时      不区分大小写
+        onkeydown 键盘被按下            不区分大小写
+        onpress  键盘被按下  不能识别功能键     区分大小写
+        三个事件的执行顺序 down  press   up
+
+
+BOM对象
+
+    js是一门单线程+事件队列的语言
+    js单线程：只有一个js解析器
+    事件队列：容器  放我们事件处理函数
+
+    事件队列里面放哪些函数
+        1.所有以on开头的事件处理函数
+        2.setTimeout()  setInterval() 中的第一个参数：事件处理函数
+        3.ajax中onreadystatechange = function(){}
+    事件队列的执行条件
+        1.主线程代码全部执行完毕
+        2.满足处理函数的触发条件
+    
+    window  它是一个全局对象  定义在里面的全局的变量和全局的方法 都会成为它的属性和方法; 在调用变量和方法时  window.变量名  其中window 可以省略;
+
+    属性:  innerHeight 获取浏览器窗口的高度
+            innerWidth  获取浏览器窗口的宽度
+
+    方法:  延时器 setTimeout(调用函数,延迟时间) 
+                停止定时器 clearTimeout(定时器表示符)
+                setInterval(调用函数, 延迟时间)
+                停止定时器 clearInterval(定时器标识符)
+
+    window常见的事件
+        onload  等待页面元素(包括资源)加载完毕之后，再加载里面的内容
+            DOMContentLoaded 是DOM内容加载完毕之后  不包括样式 图片等（属于DOM事件）
+        onresize  调整窗口大小事件
+
+    this指向
+
+
+
+    同步和异步
+
+    location对象
+        获得和设置URL(统一资源)
+        属性
+            href    设置 获取整个url  可以用于跳转页面
+            host    设置 获取域名
+            port    设置 获取端口
+            pathname    返回路径
+            search  返回参数
+            hash    返回片段 #后的内容
+
+        常用方法
+            assgin  页面跳转，记录历史，可以返回
+            replace 页面跳转，不记录历史
+            raload() 相当于刷新 参数为true时相当于强制刷新
+
+
+    navigator对象
+        获得浏览器相关信息
+
+    history对象
+        方法
+            back()  后退
+            forward()前进
+            go() 前进参数为正，后退为负
+
+
+    网页特效
+        element.offset  获得元素的偏移，位置。
+
+        element.offsetParent  返回带有定位的父级
+
+
+    元素可视client
+        clientWidth
+        clientHeight 获取元素的宽高，不包含边框.
+        clientLeft
+        clientTop
+
+        立即执行函数：不需要调用，立马能执行的函数
+        (funtion(){} ());
+        (function(){}())
+    
+    scrollWidth
+    scroolHeight   不包含边框
+    scrollTop
+    scrollLeft
+
+    scroll滚动事件
+
+    页面被卷去的头部
+    window.pageXOffset
+    window.pageYOffset
+
+
+
+    mouseover和mouseenter的区别
+    mouseover经过盒子和子类都会触发
+    mouseenter只有经过自身盒子才会触发和mouseleave搭配
+
+
+
+    动画原理
+
+
+    返回顶部
+    window.scroll(x,y);
+
+
+
+    移动端特效
+        触屏事件touch
+            touchstart
+            touchmove
+            touchend
+
+            touches  正在触摸屏幕的所有手指对象
+            targetTouches  正在触摸当前元素的所有手指对象
+            changedTouches  手指列表发生改变的列表，从无到有，从有到无
+
+    监听过渡完成的事件transitionend;
+
+    classList 类名列表  返回元素的类名
+    classList.add()  添加类名
+    classList.remove() 移除元素其中一个类名
+    classList.toggle() 切换类名
+
+
+    移动端clcik延时300ms
+    解决方案
+
+
+    本地存储
+        window.sessionStorage
+        生命周期：关闭浏览器
+        在同一窗口下，数据可以共享
+            .setItem('key', value);设置
+            .getItem('key')获取
+            .removeItem('key') 移除
+            .clearItem() 清空所有数据
+
+        window.localStorage
+        生命周期：永久生效  能够实现多窗口数据共享
+        值的类型只能是字符串
+        只能在同一域名下数据共享
+            .setItem('key', value);设置
+            .getItem('key')获取
+            .removeItem('key') 移除
+            .clearItem() 清空所有数据
+
+        window.localStorage.setItem('key', value)
+        等同于window.localStorage[key]=value;
+        window.localStorage.getItem('key')
+        等同于window.localStorage[key]
+        如果当localStorage里面没有该属性那么第一个获取到的就是undefind
+        第二个则是null
+
+
+
+
+        

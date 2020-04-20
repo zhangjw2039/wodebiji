@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/index.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .right {
+            position: relative;
+            float: left;
+            border: 1px solid #ccc;
+            height: 400px;
+            width: 400px;
+            margin: 200px 0 0 200px;
+        }
+        .left {
+            float: left;
+            width: 400px;
+            height: 500px;
+            background: pink;
+            margin-top: 200px;
+        }
+        .big {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(110%,0);
+            border: 1px solid #ccc;
+            width: 500px;
+            height: 500px;
+        }
+        .big img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .bg {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 255, 0, .4);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="right">
+            <div class="bg"></div>
+            <img src="img/s3.png" alt="">
+            <div class="big">
+                <img src="img/b3.png" alt="">
+            </div>
+        </div>
+        <div class="left"></div>
+    </div>
+</body>
+</html>

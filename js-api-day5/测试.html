@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .f {
+            position: relative;
+            height: 400px;
+            width: 400px;
+            background: pink;
+            margin: 200px auto;
+
+        }
+        .s {
+            position: absolute;
+            top: 0;
+            left: -250px;
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="f">
+        <div class="s"></div>
+
+    </div>
+</body>
+<script>
+    var f = document.querySelector('.f')
+    var s = document.querySelector('.s')
+    f.addEventListener('mousemove',fn) 
+    function fn(e){
+        e.stopPropagation();
+        console.log('hahahah')
+    }
+    
+</script>
+</html>

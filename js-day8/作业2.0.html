@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //     题目描述：制作一个函数，getDayNum( 年月日日期 )，可以返回指定日期是当前年的第几天
+    // ​   例：  getDayNum( “2019-1-2”)    返回值为：2
+    function getDayNum(str) {
+        var date2 = new Date(str);
+        var year = date2.getFullYear();
+        var num2 = date2.valueOf();
+        var date1 = new Date('2018-12-31 24:00:00');
+        var num1 = date1.valueOf();
+        var day = (num2 -num1)/1000/3600/24;
+        return day+1;
+    }
+    console.log(getDayNum('2019-2-2'));
+    
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+    </style>
+    <script>
+        function animat(obj, target, callback) {
+            window.clearInterval(obj.uname);
+            obj.uname = window.setInterval(function() {
+                if(obj.offsetLeft == target){
+                    window.clearInterval(obj.uname);
+                    callback && callback();
+                    // if(callback) {
+                    //     callback();
+                    // }
+                    // return false;
+                }
+                var step = (target-obj.offsetLeft)/10;
+                step = step>0?Math.ceil(step):Math.floor(step);
+                obj.style.left = obj.offsetLeft+step+'px';
+            },15)
+        }
+        onload = function() {
+            var div = document.querySelector('div');
+            animat(div,400,function() {
+                console.log('臭弟弟')
+            });
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

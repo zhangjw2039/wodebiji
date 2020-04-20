@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//     对以下学员随机排序，生成一个新数组：
+
+// ​	var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"]；
+//      思路
+            // 1.给定的数组可能会不同    .length
+            // 2.如何获取不重复的随机数  indexOf
+    function getRandom(max, min) {
+        return Math.floor(Math.random()*(max-min+1))+min;
+    }
+    function randomSort(arr) {
+        var randomArr = [];
+        var newArr = [];
+        var count = 1;
+        while(count <= arr.length) {
+            var num = getRandom(arr.length-1, 0);
+            if(newArr.indexOf(num) == -1) {
+                newArr.push(num);
+                randomArr[randomArr.length] = arr[num];
+                count++;
+            }
+        }
+        return randomArr;
+    }
+    var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+    console.log(randomSort(arr));
+
+    
+    
+</script>
+</html>
